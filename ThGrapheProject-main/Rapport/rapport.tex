@@ -1,0 +1,260 @@
+\documentclass[a4paper, 11pt, oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{array}
+\usepackage{shortvrb}
+\usepackage{listings}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{graphicx}             % import, scale, and rotate graphics
+\usepackage{subfigure}            % group figures
+\usepackage{alltt}
+\usepackage{url}
+\usepackage{indentfirst}
+\usepackage{eurosym}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage[
+backend=biber,        % compilateur par défaut pour biblatex
+sorting=nyt,          % trier par nom, année, titre
+citestyle=authoryear, % style de citation auteur-année
+bibstyle=alphabetic,  % style de bibliographie alphabétique
+]{biblatex}
+\addbibresource{sitographie.bib}
+\usepackage{hyperref}
+\usepackage{nccmath}
+\usepackage[hashEnumerators,smartEllipses]{markdown}
+% Change le nom par défaut des listing
+\renewcommand{\lstlistingname}{Extrait de Code}
+
+% Change la police des titres pour convenir à votre seul lecteur
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} 
+% Idem pour la table des matière.
+\usepackage[nottoc,notlof,notlot]{tocbibind} 
+\usepackage[titles,subfigure]{tocloft} 
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} 
+
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\newcommand{\coms}[1]{\textcolor{MidnightBlue}{#1}}
+
+\lstset{
+	language=C, % Utilisation du langage C
+	commentstyle={\color{MidnightBlue}}, % Couleur des commentaires
+	frame=single, % Entoure le code d'un joli cadre
+	rulecolor=\color{black}, % Couleur de la ligne qui forme le cadre
+	stringstyle=\color{RawSienna}, % Couleur des chaines de caractères
+	numbers=left, % Ajoute une numérotation des lignes à gauche
+	numbersep=5pt, % Distance entre les numérots de lignes et le code
+	numberstyle=\tiny\color{mygray}, % Couleur des numéros de lignes
+	basicstyle=\tt\footnotesize, 
+	tabsize=3, % Largeur des tabulations par défaut
+	keywordstyle=\tt\bf\footnotesize\color{Sepia}, % Style des mots-clés
+	extendedchars=true, 
+	captionpos=b, % sets the caption-position to bottom
+	texcl=true, % Commentaires sur une ligne interprétés en Latex
+	showstringspaces=false, % Ne montre pas les espace dans les chaines de caractères
+	escapeinside={(>}{<)}, % Permet de mettre du latex entre des <( et )>.
+	inputencoding=utf8,
+	literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+\newcommand{\tablemat}{~}
+
+%%%%%%%%%%%%%%%%% TITRE %%%%%%%%%%%%%%%%
+% Complétez et décommentez les définitions de macros suivantes :
+\newcommand{\intitule}{Projet}
+\newcommand{\GrNbr}{08}
+\newcommand{\PrenomUN}{Saïd}
+\newcommand{\NomUN}{Hormat-Allah}
+\newcommand{\PrenomDEUX}{Jamaà}
+\newcommand{\NomDEUX}{Jair}
+% Décommentez ceci si vous voulez une table des matières :
+\renewcommand{\tablemat}{\tableofcontents}
+
+\bibliography{sitographie.bib}
+
+
+
+%%%%%%%% ZONE PROTÉGÉE : MODIFIEZ UNE DES DIX PROCHAINES %%%%%%%%
+%%%%%%%%            LIGNES POUR PERDRE 2 PTS.            %%%%%%%%
+
+
+		
+
+		\title{MATH0499: \intitule}
+		\author{\PrenomUN~\textsc{\NomUN}, \PrenomDEUX~\textsc{\NomDEUX}}
+		\date{}
+
+
+
+\begin{document}
+	\maketitle
+	\newpage
+	\tablemat
+	\newpage
+	%%%%%%%%%%%%%%%%%%%% FIN DE LA ZONE PROTÉGÉE %%%%%%%%%%%%%%%%%%%%
+	
+
+	
+	%%%%%%%%%%%%%%%% RAPPORT %%%%%%%%%%%%%%%
+	% Écrivez votre rapport ci-dessous.
+	\section{Introduction}
+	Étant donné un graphe fortement connexe fourni en entrée (possibilité de charger un fichier, fournir un fichier exemple pour un graphe de 100 sommets), l'utilisateur sélectionne un sommet de départ $v$ et un entier $n$. On souhaite estimer la probabilité de revenir en $v$ avec un chemin de longueur exactement $n$, puis de longueur $au$ $plus$ $n$. On souhaite également compter le nombre de tels chemins. Quand un agent qui parcourt le graphe se trouve en un sommet, on suppose que le choix du successeur se fait de façon uniforme : s'il y a $t$ successeurs, chacun a une probabilité 1/$t$ d'être choisi. Expérimenter avec d'autre distributions de probabilités. Fournir des "statistiques", par exemple, sur un échantillon de $n$ chemins, quel est le plus fréquent, etc.
+	
+		
+	\section{Choix opérés}
+	Nous allons traiter les différents choix fait dans le cadre de ce projet.
+	
+	\subsection{Format de fichier}
+	Nous avons choisit le format \textbf{JSON} (\textbf{J}ava\textbf{S}cript \textbf{O}bject \textbf{N}otation). De par sa simple syntaxe, ce format de fichier permet une facilité de lecture par un humain et peut aussi être facilement écrit par ce dernier. Python offre la possibilité de lire ce format de fichier, grâce à la bibliothèque \path{json}, en transformant certaines données en dictionnaire (ou liste), ce qui facilite grandement la création de graphe avec la bibliothèque \path{NetworkX}. 
+	
+	\subsection{Architecture du projet}
+	Cette section parlera de la manière dont le projet à été divisé afin d'assurer une bonne lecture du code ainsi qu'une efficacité en terme de développement.
+	
+	La découpe en fichiers permet une maniabilité du projet et une adaptation aux changement importants dans le projet, par exemple, la lecture de fichier. Et permet aussi une simplicité d'ajout de fonctionnalités sans impacter le reste des implémentations.
+		\subsubsection{main.py}
+		Le fichier \path{main.py} est le point d'entrée du programme. Permet de "parser" les arguments entrés dans le programme (e.g. le nom de fichier fournit par l'utilisateur, le mode de débogage et s'il faut une autre distribution des probabilités).
+		
+		\subsubsection{file.py}
+		Le fichier \path{file.py}, le cœur du projet, contient toutes les fonctions importantes du projet. dont la fonction main qui est invoquée dans \path{main.py}
+		
+		\subsubsection{utils.py}
+		\path{utils.py} est une bibliothèque qui assure le bon fonctionnement des fonctions utilisés dans \path{file.py}
+		
+		\subsubsection{generator.py}
+		\path{generator.py} est mini-programme qui a pour but de générer un graphe fortement connexe avec une entrée utilisateur qui sera le nombre de sommets du graphe.
+		
+	\section{Difficultés rencontrés}
+		\subsection{Création de graphe fortement connexe}
+			Lors de la création du graphe fortement connexe, nous étions dans une impasse. Puisque nous arrivions seulement à créer des graphes connexes. Nous respections la règle disant qu'un sommet devait au moins un demi-degré sortant et un demi-degré entrant mais cela n'était pas assez. Après des recherches sur ce qu'est un graphe fortement connexe, nous avons trouvé un écrit\footcite{ma} sur la création de graphe fortement connexe. Nous étions pas loin de l'algorithme proposé, nous avons oublié de créer un arc entre chaque points $v$ et $v+1$. Et de relier le dernier sommet au premier.
+			
+			\subsection{Le parcours aléatoire de l'agent dans le graphe}
+				Comme \path{NetworkX} ne propose pas de fonction pour parcourir aléatoirement le graphe, nous avons du le faire nous même. Cela implique : De parcourir le graphe plus d'une fois à partir du même sommet $v$, de changer de sommet afin de parcourir le graphe, vérifier si le point choisit possède un demi-degré sortant ou s'il possède un chemin menant vers $v$. Ceci est un résumé de l'algorithme. Les difficultés étaient, quels devaient être les conditions d'arrêts pour chaque boucles et que devons nous faire pour avoir une liste de chemins complets. Nous avons du faire des boucles infinis imbriqués afin d'être le plus complet possible dans la recherche de chemins allant de $v$ à $v$.
+				
+			\subsection{La distribtion des probabilités pour la liste des successeurs de $v$}
+				La bibliothèque \path{numpy} propose, par sa fonction \path{np.random.choice(...)}, la possibilité de choisir aléatoirement un élément d'une liste avec une probabilité de 1/$t$ pour chaque élément avec $t$ le nombre d'éléments mais aussi une distribution uniforme personnalisée en fournissant une liste de probabilité. Mais pas la possibilité de créer une liste de $t$ éléments avec une distribution personnalisée dont la somme des éléments vaut 1. Nous avons fait un algorithme mais un problème assez important nous bloquait, notre algorithme ne nous donnait pas la valeur 1 (qui est la condition pour que la fonction \path{np.random.choice} se lance), nos valeurs variaient entre 0,999 et 1,0001. Nous nous sommes donc inspiré par une résolution envoyée dans le site stackoverflow\footcite{sta} qui est de base fait pour générer une matrice stochastique, nous l'avons adapté pour avoir une simple liste.
+
+	\section{Description des fonctions}	
+	
+		\subsection{Lecture du graphe}
+			La fonction \path{loadGraph()} prend en entrée un seul argument qui est le nom du fichier, cette fonction lit le fichier et retourne un graphe simple orienté.
+			
+		\subsection{Estimation de revenir en $v$}
+					Afin de calculer le nombre exacte de chemins d'une longueur précise, nous avons utilisé la matrice d'adjacence A de notre graphe. Et nous l'avons augmenté la puissance de la matrice A de $n$.
+		
+		\begin{ceqn}
+			\begin{align*}
+				A^n_{v, v} = \text{le nombre de chemins de longueur exactement $n$ de $v$ vers $v$ } 
+			\end{align*}
+		\end{ceqn}
+			\subsubsection{Avec un chemin exactement $n$}
+				Une fois le nombre de chemins d'exactement $n$ calculé, nous sommons tous les éléments de la matrice $A^n$ ce qui nous permet d'estimer le nombre de chemins de longueur exactement $n$.
+				
+				\begin{ceqn}
+					\begin{align*}
+						P (v, n) = \frac{A^n_{v, v}}{\sum_{i=1}^{n} \sum_{j=1}^{n} A^n_{i, j}}
+					\end{align*}
+				\end{ceqn}
+			où $P$ est l'estimation de la probabilité de revenir en $v$ avec un longueur de chemin $n$
+			
+			Ce calcul est basé sur 
+			\begin{ceqn}
+				\begin{align*}
+					P =  \frac{\textnormal{Nombre de cas favorables}}{\textnormal{Nombre de cas possibles}}
+				\end{align*}
+			\end{ceqn}
+		
+			\subsubsection{Avec un chemin au plus $n$}
+			Soit $P(v, n)$ la fonction qui permet d'estimer la probabilité de revenir en $v$ avec une longueur de chemin $n$.
+			
+			Afin d'estimer le probabilité de revenir en $v$ avec un chemin au plus $n$, nous utilisons
+			
+			\begin{ceqn}
+				\begin{align*}
+					M(v, n) = \sum_{i=1}^{n} P(v, i)
+				\end{align*}
+			\end{ceqn}
+			
+		\subsection{Parcours aléatoire du graphe}
+			La fonction \path{paths(graph, v)} prend deux arguments, \path{graph} le graphe dans lequel l'agent parcours et \path{v} l'indice du sommet de départ. Nous parcourons le graphe à partir du sommet $v$, le choix du successeur est fait aléatoirement et ainsi de suite. Une liste de chemins allant de $v$ à $v$ sont retournés.
+		
+		\subsection{Taille du chemin le plus grand/petit}
+			La fonction \path{smallestPath()} et \path{biggestPath()} sont des fonctions similaires dans lesquels nous traversons notre liste de chemins dans lequel nous cherchons la taille qui nous convient (respectivement la plus petite et la plus grande).
+			
+		\subsection{Statistiques}
+			\subsubsection{Effectif total}
+				La fonction \path{Total()} prend en entrée une liste d'occurences\footnote{La liste d'occurences est fournie par une bibliothèque python nommée Collections, nous l'utilisons dans utils.py}, parcourt la liste d'occurence en sommant chaque effectifs de chemins, et retourne l'effectif total des chemins allant de $v$ à $v$.
+			\subsubsection{Distribution des fréquences}
+				La fonction \path{frequencyDistribution()} prend en entrée une liste d'occurences, parcourt la liste d'occurences en divisant l'effectif par l'effectif total, et retourne une liste de tuples du type \path{((chemin), frequence)}. 
+				
+				Soit N l'effectif total, $x_i$ l'effectif du chemin $i$, la fréquence $F_i$ est donné par :
+				
+				\begin{ceqn}
+					\begin{align*}
+					F_i = \frac{x_i}{N}
+					\end{align*}
+				\end{ceqn}
+				
+				est la formule utilisée pour calculer la distribution des fréquences des chemins.
+			\subsubsection{La moyenne des chemins}
+				La fonction \path{meanLenPaths(stats, tot)} prend en entrée 2 arguments, \path{stats} la liste statistique de type \path{((chemin), effectif, frequence)} et \path{tot} l'effectif total. La fonction Somme la multiplication la longueur de chaque chemins avec son effectif.
+				
+				Soit len() une fonction qui permet de retourner la longueur d'un chemin, $c_i$ le chemin à l'indice i, $n_i$ l'effectif de $c_i$ .
+				
+				La moyenne de la longueur des chemins est donnée par :
+				
+				\begin{ceqn}
+					\begin{align*}
+						\bar{x} = \frac{1}{N} \sum_{i=1}^{N} \textnormal{len}(c_i) \times n_i
+					\end{align*}
+				\end{ceqn}
+				
+			\subsubsection{La variance des chemins}
+				La fonction \path{variance(stats, tot, mean)} est une simple traduction de la formule de la variance
+				
+				\begin{ceqn}
+					\begin{align*}
+						Var =  \frac{1}{N}	\sum_{i = 1}^{N} x_i^{2} - \bar{x}^2
+					\end{align*}
+				\end{ceqn}
+		où $x_i$ est la longueur du chemin multiplié par son effectif $\bar{x}$ est la moyenne des longueurs de chemins
+		
+		\section{Données de retour du programme}
+		
+		Le nombre de chemins de longueur $n$ allant de $v$ à $v$\footnote{La valeur retournée par le programme pourrait être tellement élevée que cela affiche une valeur négative},
+		la probabilité de revenir en $v$ avec un chemin de longueur exactement $n$ et la probabilité de revenir en $v$ avec une longueur de chemin au plus $n$ sont affiché dans le terminal
+		
+			Le programme fournit un fichier \path{stat.txt} qui contiendra 
+			
+			\begin{itemize}
+				\item La taille du plus grand chemin
+				\item La taille du plus petit chemin
+				\item L'effectif total des chemins
+				\item une liste de chemins de type ((chemin), effectif du chemin, frequence)
+			\end{itemize}
+		
+		Avec ce fichier, une petite analyse peut-être fait sur le parcours de l'agent dans le graphe afin de voir quel sommet, quel est le chemin le plus emprunté par l'agent et plus encore.
+		\section{Utilisation du programme}
+			Veuillez lire le fichier \path{LISEZMOI.TXT}
+\printbibliography
+
+\end{document}
